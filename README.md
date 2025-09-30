@@ -1,4 +1,4 @@
-# AnkaDocFlow
+# Fetch&Snatch
 
 Google Drive klasörlerini indirip GPU hızlandırmalı OCR ile metne dönüştüren ve Vertex AI Gemini modelleriyle analiz eden uçtan uca Türkçe belge işleme hattı.
 
