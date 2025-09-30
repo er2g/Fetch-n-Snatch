@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+.pytest_cache/
+
+# Editors
+.idea/
+.vscode/
+
+# Logs & temp
+*.log
+.DS_Store
+Thumbs.db
+
+# FastAPI / web build artefacts
+web_app/frontend/static/dist/
+node_modules/
+
+# Local credentials
+*.json
+!dummy_service_account.json

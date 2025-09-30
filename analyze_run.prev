@@ -1,0 +1,38 @@
+[INFO] 27 adet dosya analiz edilecek...
+[INFO] Analiz ediliyor: /mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/1 KALP KASININ ELEKTRİKSEL ve MEKANİK ÖZELLİKLERİ (DERS NOTU).txt
+[DEBUG] Starting new HTTPS connection (1): oauth2.googleapis.com:443
+[DEBUG] https://oauth2.googleapis.com:443 "POST /token HTTP/1.1" 200 None
+[DEBUG] Starting new HTTPS connection (1): generativelanguage.googleapis.com:443
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (1/3)...
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (2/3)...
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[ERROR] Analiz basarisiz (/mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/1 KALP KASININ ELEKTRİKSEL ve MEKANİK ÖZELLİKLERİ (DERS NOTU).txt - bolum 1/1): Gemini API beklenen metni dondurmedi.
+[WARNING] Dosya icin sonuc olusmadi, atlandi: /mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/1 KALP KASININ ELEKTRİKSEL ve MEKANİK ÖZELLİKLERİ (DERS NOTU).txt
+[INFO] Analiz ediliyor: /mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/1) Kanın bileşimi, fiziksel özellikleri ve genel işlevleri.txt
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (1/3)...
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (2/3)...
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[INFO] Analiz ediliyor: /mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/2 DOLAŞIM SİSTEMİNE GİRİŞ (DERS NOTU).txt
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (1/3)...
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (2/3)...
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[ERROR] Analiz basarisiz (/mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/2 DOLAŞIM SİSTEMİNE GİRİŞ (DERS NOTU).txt - bolum 1/1): Gemini API beklenen metni dondurmedi.
+[WARNING] Dosya icin sonuc olusmadi, atlandi: /mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/2 DOLAŞIM SİSTEMİNE GİRİŞ (DERS NOTU).txt
+[INFO] Analiz ediliyor: /mnt/c/Users/31/Desktop/OCR/KURULLAR/ocr_outputs/KURUL 1/Fizyoloji 1/3 KALBİN RİTMİK UYARILMASI (DERS NOTU).txt
+[DEBUG] https://generativelanguage.googleapis.com:443 "POST /v1beta/models/gemini-2.5-flash:generateContent HTTP/1.1" 200 None
+[DEBUG] Gemini bos yanit: {'promptFeedback': None, 'finishReason': 'MAX_TOKENS'}
+[WARNING] Gemini cagrisinda hata oldu (RuntimeError). Gemini API beklenen metni dondurmedi.. Bekleniyor. Tekrar deneme (1/3)...

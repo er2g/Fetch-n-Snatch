@@ -1,0 +1,177 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPU Turkish OCR & Gemini Analiz</title>
+  <link rel="stylesheet" href="/static/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <div class="bg-aurora"></div>
+  <header class="hero">
+    <div class="hero__content">
+      <h1 class="hero__title">Drive → OCR → Gemini Analiz Kontrol Paneli</h1>
+      <p class="hero__subtitle">Google Drive klasörlerini indir, GPU hızlandırmalı OCR çalıştır ve Gemini ile çıktılarını analiz et.</p>
+      <div class="hero__cta">
+        <a href="#drive" class="btn btn--primary">Drive İndir</a>
+        <a href="#ocr" class="btn btn--ghost">OCR Başlat</a>
+        <a href="#analysis" class="btn btn--ghost">Gemini Analiz</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section id="drive" class="card card--glass slide-up">
+      <div class="card__header">
+        <h2>1. Drive İndirme</h2>
+        <p>Service account kullanarak Drive klasörünü yerel diske indir.</p>
+      </div>
+      <form id="drive-form" class="form-grid">
+        <label class="form-field">
+          <span>Drive klasör ID</span>
+          <input type="text" name="folder_id" placeholder="1AbCdEfGh123" required />
+        </label>
+        <label class="form-field">
+          <span>Kaydedilecek klasör</span>
+          <input type="text" name="destination" placeholder="C:\\Dokumanlar\\DriveIndirme" required />
+        </label>
+        <label class="form-field">
+          <span>Service account JSON</span>
+          <input type="text" name="service_account" placeholder="C:\\anahtarlar\\drive_sa.json" required />
+        </label>
+        <label class="form-field form-field--checkbox">
+          <input type="checkbox" name="overwrite" /> Var olan dosyaları yeniden indir
+        </label>
+        <label class="form-field form-field--checkbox">
+          <input type="checkbox" name="verbose" checked /> Detaylı log
+        </label>
+        <button class="btn btn--primary form-submit" type="submit">Drive İndir</button>
+      </form>
+    </section>
+
+    <section id="ocr" class="card card--glass slide-up delay">
+      <div class="card__header">
+        <h2>2. OCR Taraması</h2>
+        <p>Belirttiğiniz klasördeki PDF/PPTX/görselleri EasyOCR ile metne dönüştür.</p>
+      </div>
+      <form id="ocr-form" class="form-grid">
+        <label class="form-field">
+          <span>Kaynak klasör</span>
+          <input type="text" name="source" placeholder="C:\\Dokumanlar" required />
+        </label>
+        <label class="form-field">
+          <span>Çıktı klasörü (opsiyonel)</span>
+          <input type="text" name="output" placeholder="Varsayılan: source\\ocr_outputs" />
+        </label>
+        <label class="form-field">
+          <span>GPU modu</span>
+          <select name="device">
+            <option value="auto" selected>Otomatik</option>
+            <option value="cuda">CUDA</option>
+            <option value="cpu">Sadece CPU</option>
+          </select>
+        </label>
+        <label class="form-field">
+          <span>PDF DPI</span>
+          <input type="number" name="dpi" value="220" min="72" />
+        </label>
+        <label class="form-field">
+          <span>Min. metin uzunluğu</span>
+          <input type="number" name="min_length" value="0" min="0" />
+        </label>
+        <label class="form-field form-field--checkbox">
+          <input type="checkbox" name="force" /> Var olan çıktıları yenile
+        </label>
+        <label class="form-field form-field--checkbox">
+          <input type="checkbox" name="verbose" checked /> Detaylı log
+        </label>
+        <button class="btn btn--primary form-submit" type="submit">OCR Başlat</button>
+      </form>
+    </section>
+
+    <section id="analysis" class="card card--glass slide-up delay">
+      <div class="card__header">
+        <h2>3. Gemini Analizi</h2>
+        <p>OCR çıktılarındaki metinleri Gemini ile analiz edip sonuçları raporla.</p>
+      </div>
+      <form id="analysis-form" class="form-grid">
+        <label class="form-field">
+          <span>OCR çıktı klasörü</span>
+          <input type="text" name="output_root" placeholder="C:\\Dokumanlar\\ocr_outputs" required />
+        </label>
+        <label class="form-field">
+          <span>Service account JSON</span>
+          <input type="text" name="service_account" placeholder="C:\\anahtarlar\\gemini_sa.json" required />
+        </label>
+        <label class="form-field">
+          <span>Model</span>
+          <input type="text" name="model" value="gemini-1.5-flash-002" />
+        </label>
+        <label class="form-field">
+          <span>Vertex bölgesi</span>
+          <input type="text" name="region" value="us-central1" />
+        </label>
+        <label class="form-field form-field--wide">
+          <span>Analiz promptu</span>
+          <textarea name="prompt" rows="4" placeholder="Örnek: klasördeki dökümanlardaki tıp ile alakalı tüm kelimeleri ayıkla" required></textarea>
+        </label>
+        <label class="form-field">
+          <span>Analiz klasör adı</span>
+          <input type="text" name="analysis_dir_name" value="analysis_outputs" />
+        </label>
+        <label class="form-field">
+          <span>Parça uzunluğu (karakter)</span>
+          <input type="number" name="max_input_chars" value="6000" min="500" />
+        </label>
+        <label class="form-field">
+          <span>Parça örtüşmesi</span>
+          <input type="number" name="chunk_overlap" value="300" min="0" />
+        </label>
+        <label class="form-field">
+          <span>Maks. çıktı token</span>
+          <input type="number" name="max_output_tokens" value="2048" min="256" />
+        </label>
+        <label class="form-field">
+          <span>Temperature</span>
+          <input type="number" step="0.05" min="0" max="1" name="temperature" value="0.0" />
+        </label>
+        <label class="form-field">
+          <span>Top-p</span>
+          <input type="number" step="0.05" min="0" max="1" name="top_p" value="0.9" />
+        </label>
+        <label class="form-field">
+          <span>Top-k</span>
+          <input type="number" min="1" name="top_k" value="40" />
+        </label>
+        <button class="btn btn--primary form-submit" type="submit">Analizi Başlat</button>
+      </form>
+    </section>
+
+    <section class="card card--logs slide-up" id="logs">
+      <div class="card__header">
+        <h2>İşlem Durumu &amp; Loglar</h2>
+        <p>Çalışan görevleri takip için bir job seçin.</p>
+      </div>
+      <div class="jobs-panel">
+        <div class="jobs-list" id="jobs-list"></div>
+        <div class="logs-view">
+          <div class="logs-header">
+            <span id="active-job-title">Log akışı</span>
+            <button class="btn btn--ghost" id="cancel-job" disabled>Görevi Durdur</button>
+          </div>
+          <pre id="log-output" class="logs-output">Henüz seçili bir görev yok.</pre>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>Drive → OCR → Gemini pipeline — web arayüzü</span>
+  </footer>
+
+  <script src="/static/app.js" type="module"></script>
+</body>
+</html>
