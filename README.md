@@ -13,15 +13,6 @@ Google Drive klasörlerini indirip GPU hızlandırmalı OCR ile metne dönüşt�
 
 ---
 
-## 📂 Dizin yapısı
-```
-├─ drive_fetch.py             # Drive klasörü indirici
-├─ gpu_turkish_ocr.py         # OCR boru hattı
-├─ analyze_ocr_outputs.py     # Vertex AI Gemini analiz aracı (31.py mantığı)
-├─ web_app/                   # FastAPI backend + frontend SPA
-└─ sample_run/                # Örnek OCR çıktıları
-```
-
 ---
 
 ## 🔧 Kurulum
@@ -82,21 +73,3 @@ WSL üzerinden Windows tarayıcısına servis vermek için örnek script:
 ```
 
 ---
-
-## 📦 Dağıtıma hazır paketler
-- `requirements.txt` – çekirdek bağımlılıklar (EasyOCR, FastAPI, Vertex AI SDK, vb.)
-- `.gitignore` – Python, FastAPI ve frontend çıktıları için önerilen filtreler
-
----
-
-## 📝 Lisans
-Projede üçüncü parti kütüphanelerin kendi lisansları geçerlidir. Service account ve Vertex AI/Gemini kullanımında Google Cloud koşullarına uyduğunuzdan emin olun.
-
----
-
-## 📛 Ad Önerisi
-Bu depoyu **“AnkaDocFlow”** adıyla yayınlayabilirsiniz. Anka (Phoenix) hem Türkçe çağrışım yapar hem de dökümanları “yeniden doğuran” boru hattına uygun bir metafor sunar.
-
-> Önerilen açıklama: “AnkaDocFlow – Drive → OCR → Gemini belgeler için uçtan uca Türkçe analiz hattı”.
-
-Mutlu geliştirmeler! 🪶
